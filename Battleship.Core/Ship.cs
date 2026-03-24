@@ -2,8 +2,8 @@ namespace Battleship.Core;
 
 public class Ship
 {
-    public HashSet<Position> Cells = new();
-    public HashSet<Position> Hits = new();
+    public HashSet<Position> Cells { get; }
+    public HashSet<Position> Hits { get; } = new();
 
     public Ship(IEnumerable<Position> cells)
     {

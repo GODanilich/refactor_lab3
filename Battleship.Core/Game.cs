@@ -2,7 +2,7 @@ namespace Battleship.Core;
 
 public class Game
 {
-    public Board Board;
+    public Board Board { get; }
 
     public Game(Board board)
     {

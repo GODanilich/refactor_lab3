@@ -2,9 +2,9 @@ namespace Battleship.Core;
 
 public class Board
 {
-    public List<Ship> Ships = new();
-    public HashSet<Position> Shots = new();
-    public int Size;
+    public List<Ship> Ships { get; } = new();
+    public HashSet<Position> Shots { get; } = new();
+    public int Size { get; }
 
     public Board(int size = 10)
     {
