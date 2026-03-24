@@ -102,7 +102,7 @@ public class Board
         throw new InvalidOperationException("Failed to generate fleet for the current board size.");
     }
 
-    public string Fire(Position position)
+    public ShotResults Fire(Position position)
     {
         if (!IsInBounds(position))
         {

@@ -9,7 +9,7 @@ public class Game
         Board = board ?? throw new ArgumentNullException(nameof(board));
     }
 
-    public string MakeShot(Position position)
+    public ShotResults MakeShot(Position position)
     {
         return Board.Fire(position);
     }

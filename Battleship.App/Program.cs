@@ -6,7 +6,7 @@ var board = new Board(size: settings.BoardSize);
 board.GenerateRandomFleet(settings.Fleet);
 
 var game = new Game(board);
-var shotHistory = new Dictionary<Position, string>();
+var shotHistory = new Dictionary<Position, ShotResults>();
 var victoryMessage = new VictoryMessage();
 var boardLegend = new BoardLegend();
 
@@ -54,7 +54,7 @@ while (true)
     Console.WriteLine($"Result: {result}");
 }
 
-static void PrintBoard(Board board, IReadOnlyDictionary<Position, string> shots)
+static void PrintBoard(Board board, IReadOnlyDictionary<Position, ShotResults> shots)
 {
     Console.WriteLine("Final board:");
     Console.Write("   ");
@@ -79,7 +79,7 @@ static void PrintBoard(Board board, IReadOnlyDictionary<Position, string> shots)
     }
 }
 
-static char GetCellSymbol(Board board, IReadOnlyDictionary<Position, string> shots, Position position)
+static char GetCellSymbol(Board board, IReadOnlyDictionary<Position, ShotResults> shots, Position position)
 {
     var hasShip = board.Ships.Any(s => s.Occupies(position));
     var hasShot = shots.TryGetValue(position, out var result);
@@ -117,7 +117,7 @@ static int ParseBoardSize(string[] args)
     return 10;
 }
 
-static void PrintBoardOnExit(Board board, IReadOnlyDictionary<Position, string> shots, IReadOnlyDictionary<char, string> legend)
+static void PrintBoardOnExit(Board board, IReadOnlyDictionary<Position, ShotResults> shots, IReadOnlyDictionary<char, string> legend)
 {
     Console.WriteLine("Board on exit:");
 
