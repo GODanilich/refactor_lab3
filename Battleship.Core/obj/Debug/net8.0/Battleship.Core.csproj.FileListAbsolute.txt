@@ -1,0 +1,22 @@
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/bin/Debug/net8.0/Battleship.Core.deps.json
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/bin/Debug/net8.0/Battleship.Core.dll
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/bin/Debug/net8.0/Battleship.Core.pdb
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.AssemblyInfoInputs.cache
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.AssemblyInfo.cs
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.csproj.CoreCompileInputs.cache
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.dll
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/refint/Battleship.Core.dll
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/Battleship.Core.pdb
+/Users/lidia/Work/ИПМКН/Task2/Battleship.Core/obj/Debug/net8.0/ref/Battleship.Core.dll
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\bin\Debug\net8.0\Battleship.Core.deps.json
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\bin\Debug\net8.0\Battleship.Core.dll
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\bin\Debug\net8.0\Battleship.Core.pdb
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.AssemblyInfoInputs.cache
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.AssemblyInfo.cs
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.csproj.CoreCompileInputs.cache
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.dll
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\refint\Battleship.Core.dll
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\Battleship.Core.pdb
+C:\Users\danil\OneDrive\Рабочий стол\code\с#\Task2\Battleship.Core\obj\Debug\net8.0\ref\Battleship.Core.dll
