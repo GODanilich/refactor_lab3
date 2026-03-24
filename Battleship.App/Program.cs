@@ -7,8 +7,8 @@ board.GenerateRandomFleet(settings.Fleet);
 
 var game = new Game(board);
 var shotHistory = new Dictionary<Position, ShotResults>();
-var victoryMessage = new VictoryMessage();
-var boardLegend = new BoardLegend();
+
+
 
 Console.WriteLine("Battleship demo started.");
 Console.WriteLine($"Board size: {boardSize}x{boardSize}. Enter coordinates as: row col (for example: 0 1).");
@@ -19,9 +19,9 @@ while (true)
 {
     if (game.Board.AllShipsSunk())
     {
-        Console.WriteLine(victoryMessage.Message.Value);
+        Console.WriteLine(GameText.VictoryMessage);
         PrintBoard(game.Board, shotHistory);
-        PrintLegend(boardLegend.Legend.Value);
+        PrintLegend(GameText.BoardLegend);
         break;
     }
 
@@ -31,7 +31,7 @@ while (true)
     if (string.Equals(input, "q", StringComparison.OrdinalIgnoreCase))
     {
         Console.WriteLine("Exit.");
-        PrintBoardOnExit(game.Board, shotHistory, boardLegend.Legend.Value);
+        PrintBoardOnExit(game.Board, shotHistory, GameText.BoardLegend);
         break;
     }
 
