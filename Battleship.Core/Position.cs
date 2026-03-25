@@ -1,9 +1,9 @@
 namespace Battleship.Core;
 
-public struct Position
+public readonly struct Position : IEquatable<Position>
 {
-    public int Row;
-    public int Column;
+    public int Row { get; }
+    public int Column { get; }
 
     public Position(int row, int column)
     {
@@ -13,9 +13,18 @@ public struct Position
 
     public override string ToString() => $"({Row},{Column})";
 
+    public bool Equals(Position other)
+    {
+        return Row == other.Row && Column == other.Column;
+    }
+
     public override bool Equals(object? obj)
     {
-        return obj is Position other && Row == other.Row && Column == other.Column;
+        if (obj is Position other)
+        {
+            return Equals(other);
+        }
+        return false;
     }
 
     public override int GetHashCode() => HashCode.Combine(Row, Column);

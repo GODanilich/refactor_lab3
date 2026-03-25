@@ -2,8 +2,8 @@ namespace Battleship.Core;
 
 public class GameSettings
 {
-    public int BoardSize = 10;
-    public List<int> Fleet = new();
+    public int BoardSize { get; }
+    public List<int> Fleet { get; }
 
     public GameSettings(int boardSize)
     {

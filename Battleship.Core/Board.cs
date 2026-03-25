@@ -2,9 +2,9 @@ namespace Battleship.Core;
 
 public class Board
 {
-    public List<Ship> Ships = new();
-    public HashSet<Position> Shots = new();
-    public int Size;
+    public List<Ship> Ships { get; } = new();
+    public HashSet<Position> Shots { get; } = new();
+    public int Size { get; }
 
     public Board(int size = 10)
     {
@@ -65,44 +65,10 @@ public class Board
 
     public void GenerateRandomFleet(IReadOnlyList<int> shipLengths, int? seed = null)
     {
-        if (shipLengths.Count == 0)
-        {
-            throw new ArgumentException("Ship lengths list must not be empty.", nameof(shipLengths));
-        }
-
-        if (shipLengths.Any(length => length <= 0))
-        {
-            throw new ArgumentException("All ship lengths must be positive.", nameof(shipLengths));
-        }
-
-        var random = seed.HasValue ? new Random(seed.Value) : new Random();
-        var sortedLengths = shipLengths.OrderByDescending(x => x).ToArray();
-
-        for (var attempt = 0; attempt < 200; attempt++)
-        {
-            Ships.Clear();
-            Shots.Clear();
-            var success = true;
-
-            foreach (var shipLength in sortedLengths)
-            {
-                if (!TryPlaceRandomShip(shipLength, random))
-                {
-                    success = false;
-                    break;
-                }
-            }
-
-            if (success)
-            {
-                return;
-            }
-        }
-
-        throw new InvalidOperationException("Failed to generate fleet for the current board size.");
+        FleetGenerator.Generate(this, shipLengths, seed);
     }
 
-    public string Fire(Position position)
+    public ShotResults Fire(Position position)
     {
         if (!IsInBounds(position))
         {
@@ -133,34 +99,6 @@ public class Board
                && position.Row < Size
                && position.Column >= 0
                && position.Column < Size;
-    }
-
-    private bool TryPlaceRandomShip(int length, Random random)
-    {
-        for (var attempt = 0; attempt < 1000; attempt++)
-        {
-            var horizontal = random.Next(0, 2) == 0;
-            var startRow = horizontal ? random.Next(0, Size) : random.Next(0, Size - length + 1);
-            var startColumn = horizontal ? random.Next(0, Size - length + 1) : random.Next(0, Size);
-            var cells = new List<Position>(length);
-
-            for (var i = 0; i < length; i++)
-            {
-                var row = horizontal ? startRow : startRow + i;
-                var column = horizontal ? startColumn + i : startColumn;
-                cells.Add(new Position(row, column));
-            }
-
-            if (!CanPlaceShip(cells))
-            {
-                continue;
-            }
-
-            Ships.Add(new Ship(cells));
-            return true;
-        }
-
-        return false;
     }
 
     private static bool IsStraightLine(List<Position> cells)
